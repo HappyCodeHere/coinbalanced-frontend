@@ -7,7 +7,7 @@ $(document).ready(() => {
         <td>lorem</td>
         <td>lorem</td>
         <td>lorem</td>
-        <td><a href="/id">open</a></td>
+        <td><a href="/contract.html">open</a></td>
       </tr>
     `;
 
