@@ -40,3 +40,21 @@ footer {
     font-size: 13px;
   }
 }
+
+.btn-reset {
+  border: none;
+  display: block;
+  color: white;
+  padding: 10px 15px;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
+}

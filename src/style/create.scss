@@ -1,0 +1,66 @@
+
+
+section {
+  .container {
+    width: 60%;
+    margin: 50px auto;
+  }
+
+  label {
+    display: block;
+  }
+
+  input[type="text"], textarea, select {
+    width: 100%;
+    padding: 5px;
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: none;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+
+    input, a {
+      width: 200px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    input {
+      background-color: #1565c0;
+    }
+
+    a {
+      background-color: #ed193f;
+
+      &:hover {
+
+      }
+
+    }
+  }
+
+  article {
+    display: block;
+
+    h5, h6, p {
+      text-align: center;
+    }
+
+    p {
+      span {
+        background-color: yellow;
+      }
+    }
+  }
+
+  .togle-contract {
+    margin: 10px auto;
+    width: 200px;
+    background-color: orange;
+  }
+}
