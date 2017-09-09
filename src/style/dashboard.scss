@@ -1,0 +1,32 @@
+
+section {
+  a.create {
+    background-color: #1565c0;
+    color: white;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    margin-top: 20px;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  table {
+    margin: 20px 0;
+    width: 100%;
+    border: 1px solid #1565c0;
+
+    th {
+      text-align: center;
+      width: 200px;
+      padding: 20px 0;
+    }
+
+    td {
+      text-align: center;
+    }
+  }
+}

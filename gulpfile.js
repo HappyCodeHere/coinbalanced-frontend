@@ -29,15 +29,16 @@ var path = {
         js: 'dist/js/',
         img: 'dist/img/',
         fonts: 'dist/fonts/',
-        libs: 'dist/libs/'
+        libs: 'dist/libs/',
     },
     src: {
         html: 'src/html/*.html',
         style: 'src/style/*.scss',
-        js: 'src/js/main.js',
+        js: 'src/js/*.js',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
-        libs: 'src/libs/**/*.*'
+        libs: 'src/libs/**/*.*',
+        template: 'src/template/**/*.*'
     },
     watch: {
         html: 'src/html/**/*.html',
@@ -45,7 +46,8 @@ var path = {
         js: 'src/js/**/*.js',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
-        libs: 'src/libs/**/*.*'
+        libs: 'src/libs/**/*.*',
+        template: 'src/template/**/*.*',
     },
     clean: './dist'
 };
@@ -107,12 +109,18 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.dist.fonts))
 });
 
+gulp.task('libs:build', function() {
+    gulp.src(path.src.libs)
+        .pipe(gulp.dest(path.dist.libs))
+});
+
 gulp.task('build', [
     'html:build',
     'style:build',
     'js:build',
     'image:build',
-    'fonts:build'
+    'fonts:build',
+    'libs:build',
 ]);
 
 
@@ -131,6 +139,12 @@ gulp.task('watch', function(){
     });
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
+    });
+    watch([path.watch.libs], function(event, cb) {
+        gulp.start('libs:build');
+    });
+    watch([path.watch.template], function(event, cb) {
+        gulp.start('html:build');
     });
 });
 
