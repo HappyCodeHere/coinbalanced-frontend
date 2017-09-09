@@ -28,28 +28,31 @@ var path = {
         css: 'dist/css/',
         js: 'dist/js/',
         img: 'dist/img/',
-        fonts: 'dist/fonts/'
+        fonts: 'dist/fonts/',
+        libs: 'dist/libs/'
     },
     src: {
         html: 'src/html/*.html',
-        style: 'src/style/main.scss',
+        style: 'src/style/*.scss',
         js: 'src/js/main.js',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        libs: 'src/libs/**/*.*'
     },
     watch: {
         html: 'src/html/**/*.html',
         style: 'src/style/**/*.scss',
         js: 'src/js/**/*.js',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        libs: 'src/libs/**/*.*'
     },
     clean: './dist'
 };
 
 var config = {
     server: {
-        baseDir: "./dist/html"
+        baseDir: "./dist"
     },
     open: false,
     tunnel: true,

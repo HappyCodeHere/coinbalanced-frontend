@@ -10,16 +10,42 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <script src="../libs/jquery-modal/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../libs/jquery-modal/jquery.modal.css" type="text/css" media="screen" />
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/firstPage.css">
 
     <title>Coin Balanced</title>
 </head>
 <body>
-    <a href="./secondPage.html">вторая страница</a>
-    <section class="content">
-        Coin Balanced первая стр
+    //= ../template/header
+    <section>
+        <div class="container">
+          Sign in
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" placeholder="First name">
+            </div>
+            <div class="col-md-6">
+              <input type="text" placeholder="First name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" placeholder="First name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <a href="./secondPage.html" class="btn btn-warning">Start</a>
+            </div>
+          </div>
+        </div>
     </section>
-    <script src="js/main.js"></script>
+    //= ../template/footer
+    <script src="js/firstPage.js"></script>
 </body>
 </html>
