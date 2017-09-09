@@ -7,6 +7,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
 
+    babel = require('gulp-babel'),
+    browserify = require('gulp-browserify'),
     uglify = require('gulp-uglify'),
 
     imagemin = require('gulp-imagemin'),
@@ -86,6 +88,14 @@ gulp.task('js:build', function () {
     gulp.src(path.src.js) //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
         .pipe(sourcemaps.init()) //Инициализируем sourcemap
+        .pipe(browserify({
+          insertGlobals : true,
+          debug : !gulp.env.production
+        }))
+
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify()) //Сожмем наш js
         .pipe(sourcemaps.write()) //Пропишем карты
         .pipe(gulp.dest(path.dist.js)) //Сохраним готовый файл в dist
