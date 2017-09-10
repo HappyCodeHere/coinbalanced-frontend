@@ -2,12 +2,11 @@ $(document).ready(() => {
 
     const html = `
       <tr>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td><a href="/contract.html">publish</a></td>
+        <td>test</td>
+        <td>test</td>
+        <td>test</td>
+        <td><span class="label label-success">test</span></td>
+        <td><a href="/contract.html">show contract</a></td>
       </tr>
     `;
 

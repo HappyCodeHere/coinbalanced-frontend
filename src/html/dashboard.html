@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
 
-    <title>Coin Balanced</title>
+    <title>Dashboard</title>
 </head>
 <body>
   <header>
@@ -21,7 +21,7 @@
       <img src="img/logo.png" alt="">
     </a>
     <div>
-      <a href="#">some menu</a>
+      <a href="#">Menu</a>
     </div>
   </header>
     <section class="content">
@@ -34,13 +34,25 @@
             <!-- <a href="/create.html" class="create">Create contract 4</a> -->
           </div>
 
-          <table class="table-bordered table-hover">
+          <div class="row table-controls">
+            <div class="col-md-2">
+              <div class="form-group">
+                <input type="text" class="form-control" name="z-reg" placeholder="Date period">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <input type="text" class="form-control" name="z-reg" placeholder="Status">
+              </div>
+            </div>
+          </div>
+
+          <table class="table table-hover">
             <thead>
               <th>Contract name</th>
               <th>Contract ID</th>
               <th>Contractor</th>
               <th>Status</th>
-              <th>Progress</th>
               <th>-</th>
             </thead>
             <tbody class="">

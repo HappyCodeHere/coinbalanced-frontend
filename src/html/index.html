@@ -28,38 +28,54 @@
         <a href="#">Sing in</a>
       </div>
     </header>
-    <section class="content">
-        <div class="container">
-          <h2>Sign up</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <input type="text" placeholder="First name">
+    <!-- <div id="particles-js"> -->
+      <section class="content">
+          <div class="container">
+            <h2>Sign up</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" placeholder="First name">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Last name">
+              </div>
             </div>
-            <div class="col-md-6">
-              <input type="text" placeholder="Last name">
+
+            <div class="row">
+              <div class="col-md-12">
+                <input type="text" placeholder="E-mail">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-offset-4 col-md-4">
+                <a href="./dashboard.html" class="">Start</a>
+              </div>
             </div>
           </div>
+      </section>
 
-          <div class="row">
-            <div class="col-md-12">
-              <input type="text" placeholder="E-mail">
-            </div>
-          </div>
+    <!-- </div> -->
 
-          <div class="row">
-            <div class="col-md-offset-4 col-md-4">
-              <a href="./dashboard.html" class="">Start</a>
-            </div>
-          </div>
-        </div>
-    </section>
 
-    <footer class="footer">
+
+    <footer class="footer" >
       <span>
         © 2017 Coin balanced. All rights reserved.
       </span>
     </footer>
 
     <script src="js/apiService.js"></script>
+
+
+
+<script src="./libs/particles.js"></script>
+
+<script>
+particlesJS.load('particles-js', './libs/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+
+</script>
 </body>
 </html>

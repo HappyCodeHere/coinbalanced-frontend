@@ -113,7 +113,11 @@ $(document).ready(() => {
       prevState = amountRewards;
     }
 
-    const deposit = $('.if-deposit input').val();
+    const deposit = $('.add-deposit input').val();
+    console.log('sf', deposit);
+    if (deposit && $('[name="contract-action"]').val() === 'после внесения Депозита') {
+      $('.if-deposi').text('размещает '+ deposit + 'ETH');
+    }
 
     const persent = $('.reward-persent input').val();
 

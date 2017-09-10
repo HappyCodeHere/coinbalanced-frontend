@@ -1,4 +1,14 @@
+body {
+  background-image: url('../img/back.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 section {
+  min-height: 500px;
+
+
+
   .container {
     width: 40%;
     margin: 50px auto;
@@ -34,4 +44,9 @@ section {
       opacity: 0.8;
     }
   }
+}
+
+
+footer {
+  position: static;
 }

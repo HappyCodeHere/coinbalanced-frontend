@@ -21,6 +21,8 @@ section {
     display: flex;
     // // justify-content:
 
+    // border: 1px solid gray;
+
     a {
       width: 100%;
       // height: 35px;
@@ -51,15 +53,15 @@ section {
 
   a.create {
     background-color: rgb(239, 241, 242);
-    color: #1565c0 !important;
+    color: #2172cf !important;
     // font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     // color: white;
     display: block;
     text-align: center;
-    // text-transform: uppercase;
+    text-transform: uppercase;
     padding: 20px 15px;
-    margin-top: 20px;
+    margin-top: -20px;
 
 
   }
@@ -67,17 +69,25 @@ section {
   table {
     margin: 20px 0;
     width: 100%;
-    border: 1px solid #1565c0;
+    // border: 1px solid #1565c0;
 
     th {
       text-align: center;
       width: 200px;
-      padding: 20px 0;
+      background-color: #eaeaea;
+      border-bottom: none !important;
+      padding: 20px 0 !important;
     }
 
     td {
       text-align: center;
-      padding: 10px;
+      padding: 10px  0 !important;
+      font-size: 15px;
+    }
+
+    .label {
+      font-size: 13px !important;
+
     }
 
     tr {
@@ -88,8 +98,41 @@ section {
       }
     }
   }
+
+
+  a {
+    color: rgb(83, 84, 82);
+    font-size: 12px;
+    // text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+      color: rgb(83, 84, 82);
+    }
+  }
 }
 
 footer {
   position: static;
+}
+
+
+.table-controls {
+  margin-top: 30px;
+
+  input[type="text"], textarea, select {
+    width: 100% !important;
+    padding: 5px !important;
+
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    padding-left: 15px;
+
+
+    &:active,
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
 }
