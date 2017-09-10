@@ -75,11 +75,10 @@ $(document).ready(() => {
 
 
 
-
-    $('.i-name-o').text(iName);
-    $('.i-reg-o').text(iReg);
-    $('.i-unn-o').text(iUnn);
-    $('.i-eth-o').text(iEth);
+    iName ? $('.i-name-o').text('Наименование: '+ iName) : $('.i-name-o').text(iName);
+    iReg ? $('.i-reg-o').text('регистрационнный номер: ' + iReg) : $('.i-reg-o').text(iReg);
+    iUnn ? $('.i-unn-o').text('учетный номер налогоплательщика: '+ iUnn) : $('.i-unn-o').text(iUnn);
+    iEth ? $('.i-eth-o').text('Ethereum-адрес: '+ iEth) : $('.i-eth-o').text(iEth);
 
     $('.z-name-o').text(zName);
     $('.z-reg-o').text(zReg);
@@ -87,14 +86,15 @@ $(document).ready(() => {
     $('.z-eth-o').text(zEth);
 
     const rewardsPay = $('[name="rewards-pay"]').val();
-    const amountRewards = $('[name="amount-rewards"]').val();
+    const amountRewards = $('[name="amount-rewards"] option:selected').text();
 
-    console.log('--------');
+    // console.log(amountRewards)
 
     if (amountRewards === 'как % от значения “Оплата на сумму”')  {
       if (prevState !== amountRewards) {
         renderPesentFields();
       }
+
       handleIfPersent();
       prevState = amountRewards;
     } else {
@@ -108,13 +108,10 @@ $(document).ready(() => {
     }
 
     const deposit = $('.if-deposit input').val();
-    console.log('deposit', deposit);
 
     const persent = $('.reward-persent input').val();
-    console.log(persent);
 
     const rDeposit = $('.reward-deposit input').val();
-    console.log(rDeposit);
 
     $('.rewards-pay').text(amountRewards);
     // const iEth = ;
@@ -123,7 +120,6 @@ $(document).ready(() => {
     $('.contract-action').text($('[name="contract-action"]').val());
 
     if ($('[name="contract-action"]').val() === 'после внесения Депозита') {
-      console.log('debug');
 
       // дичь
       if (!$('.add-deposit').html() || $('.add-deposit').html() && $('.add-deposit').html() .length < 1) {
