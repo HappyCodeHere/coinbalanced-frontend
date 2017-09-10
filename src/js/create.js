@@ -26,7 +26,16 @@ $(document).ready(() => {
     const amountRewards = $('[name="amount-rewards"]').val();
 
 
-    
+    // новые поля
+    const deposit = $('.if-deposit input').val();
+    const persent = $('.reward-persent input').val();
+    const rDeposit = $('.reward-deposit input').val();
+
+
+
+    // console.log('deposit', deposit);
+    // console.log('persent', persent);
+    // console.log('rDeposit', rDeposit);
     window.location.href = '/dashboard.html';
   });
 
@@ -39,6 +48,8 @@ $(document).ready(() => {
       $contract.css('display', 'block');
     }
   });
+
+
 
   window.addEventListener('input', (event) => {
     if(event.target.tagName === 'INPUT') {
@@ -65,6 +76,8 @@ $(document).ready(() => {
     const iEth = $('[name="i-eth"]').val();
 
 
+
+
     $('.i-name-o').text(iName);
     $('.i-reg-o').text(iReg);
     $('.i-unn-o').text(iUnn);
@@ -77,11 +90,6 @@ $(document).ready(() => {
 
     const rewardsPay = $('[name="rewards-pay"]').val();
     const amountRewards = $('[name="amount-rewards"]').val();
-
-    $('.rewards-pay').text(amountRewards);
-    $('.amount-rewards').text(rewardsPay);
-
-
 
     if (amountRewards === 'как % от значения “Оплата на сумму”')  {
       if (prevState !== amountRewards) {
@@ -99,13 +107,55 @@ $(document).ready(() => {
       prevState = amountRewards;
     }
 
+    const deposit = $('.if-deposit input').val();
+    console.log('deposit', deposit);
+
+    const persent = $('.reward-persent input').val();
+    console.log(persent);
+
+    const rDeposit = $('.reward-deposit input').val();
+    console.log(rDeposit);
+
+    $('.rewards-pay').text(amountRewards);
+    // const iEth = ;
+    $('.amount-rewards').text(rewardsPay);
+
+    $('.contract-action').text($('[name="contract-action"]').val());
+
+    if ($('[name="contract-action"]').val() === 'после внесения Депозита') {
+      console.log('debug');
+
+      // дичь
+      if (!$('.add-deposit').html() || $('.add-deposit').html() && $('.add-deposit').html() .length < 1) {
+        renderAddDeposit();
+      }
+    } else {
+      $('.add-deposit').html('');
+    }
+
+    function renderAddDeposit() {
+      const text = `
+      <div class="add-deposit">
+        <div class="form-group">
+          <label>Сумма депозита, ETH</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      `;
+
+      $('.if-deposit').html(text);
+    }
+
+
+
+
 
 
     function renderDepositField() {
       const text = `
       <div class="reward-deposit">
         <div class="form-group">
-          <label>Вознаграждение исполнителю, WEI</label>
+          <label>Вознаграждение исполнителю, ETH</label>
           <input type="text" class="form-control">
         </div>
       </div>
@@ -127,10 +177,10 @@ $(document).ready(() => {
       // if (+rewardPersent > 1) {
       //   $('.reward-persent .z-share').text(rewardPersent - 1);
       // }
-      //
-      // if (!rewardPersent) {
-      //   $('.reward-persent .z-share').text('');
-      // }
+
+      if (!rewardPersent) {
+        $('.reward-persent .z-share').text('');
+      }
     }
 
     function handleIfDeposit() {
@@ -148,12 +198,11 @@ $(document).ready(() => {
         <label>Вознаграждение исполнителю, %</label>
         <input type="text" class="form-control">
       </div>
-
-      <p>Заказчик: <span class="z-share"></span></p>
-       <p>Платформа: <span>1%</span></p>
-
     </div>
     `
+
+    // <p>Заказчик: <span class="z-share"></span></p>
+    //  <p>Платформа: <span>1%</span></p>
 
     $('.pay-type').html(text);
   }

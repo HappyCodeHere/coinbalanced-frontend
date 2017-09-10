@@ -95,8 +95,8 @@
                 <label>Вознаграждение выплачивается:</label>
                 <select name="rewards-pay" class="form-control">
                   <option>при каждом случае Оплаты</option>
-                  <option>при определенном (число) количестве Оплат</option>
-                  <option>если Вознаграждение составляет не менее (число), но не более (число)</option>
+                  <option>при определенном количестве Оплат</option>
+                  <!-- <option>если Вознаграждение составляет не менее (число), но не более (число)</option> -->
                 </select>
               </div>
             </div>
@@ -120,21 +120,13 @@
               <label>Договор вступает в силу:</label>
               <select name="contract-action" class="form-control">
                 <option>незамедлительно</option>
-                <option>c даты и времени</option>
-                <option>внесения Депозита</option>
+                <!-- <option>c даты и времени</option> -->
+                <option>после внесения Депозита</option>
               </select>
             </div>
 
-            <div class="pay-type">
-
-            </div>
-
-
-
-
-
-
-
+            <div class="if-deposit"></div>
+            <div class="pay-type"></div>
           </section>
 
           <!-- <button class="togle-contract btn-reset">Hide contract</button> -->
