@@ -94,9 +94,8 @@
               <div class="form-group">
                 <label>Вознаграждение выплачивается:</label>
                 <select name="rewards-pay" class="form-control">
-                  <option>при каждом случае Оплаты</option>
-                  <option>при определенном (число) количестве Оплат</option>
-                  <option>если Вознаграждение составляет не менее (число), но не более (число)</option>
+                  <option value="onSum">при каждом случае Оплаты</option>
+                  <option value="everyTransaction">при определенном (число) количестве Оплат</option>
                 </select>
               </div>
             </div>
@@ -104,8 +103,8 @@
               <div class="form-group">
                 <label>Размер вознаграждения составляет:</label>
                 <select name="amount-rewards" class="form-control">
-                  <option>как % от значения “Оплата на сумму”</option>
-                  <option>фиксированное число ETH</option>
+                  <option value="percent">как % от значения “Оплата на сумму”</option>
+                  <option value="fixed">фиксированное число ETH</option>
                 </select>
               </div>
             </div>
@@ -164,7 +163,7 @@
         © 2017 Coin balanced. All rights reserved.
       </span>
     </footer>
-
+    <script src="js/apiService.js"></script>    
     <script src="js/create.js"></script>
 </body>
 </html>
