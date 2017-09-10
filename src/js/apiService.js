@@ -76,7 +76,3 @@ function sendRequest(value, endpoint) {
         }
     })
 }
-
-$(document).ready(() => {
-    createContract();
-});
