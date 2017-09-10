@@ -4,6 +4,19 @@ section {
   .container {
     width: 60%;
     margin: 50px auto;
+
+    .row > .col-md-6 {
+      h5 {
+        text-align: center;
+        font-size: 20px;
+        margin: 20px 0;
+      }
+    }
+  }
+
+  > h3 {
+    text-align: center;
+    margin: 30px 0;
   }
 
   label {
@@ -46,9 +59,27 @@ section {
 
   article {
     display: block;
+    margin: 30px 0;
 
-    h5, h6, p {
+    h5:first-of-type, h6, p {
       text-align: center;
+    }
+
+    h5 {
+      font-size: 26px;
+    }
+
+    h6 {
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    h3 {
+      font-size: 18px !important;
+    }
+
+    ul {
+      list-style-type: none;
     }
 
     p {

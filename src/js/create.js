@@ -2,6 +2,8 @@ $(document).ready(() => {
   const $button = $('.togle-contract');
   const $contract = $('article');
 
+  updateContract();
+
   $button.on('click', () => {
     if ($contract.css('display') === 'block') {
       $button.text('Show contract');
@@ -12,9 +14,20 @@ $(document).ready(() => {
     }
   });
 
+  window.addEventListener('input', (event) => {
+    if(event.target.tagName === 'INPUT') {
+      updateContract();
+    }
+  })
+
+  window.addEventListener('change', (event) => {
+    if(event.target.tagName === 'SELECT') {
+      updateContract();
+    }
+  })
 
 
-  const updateContract = () => {
+  function updateContract() {
     const zName = $('[name="z-name"]').val();
     const zReg = $('[name="z-reg"]').val();
     const zUnn = $('[name="z-unn"]').val();
@@ -35,18 +48,12 @@ $(document).ready(() => {
     $('.z-reg-o').text(zReg);
     $('.z-unn-o').text(zUnn);
     $('.z-eth-o').text(zEth);
+
+    const rewardsPay = $('[name="rewards-pay"]').val();
+    const amountRewards = $('[name="amount-rewards"]').val();
+
+    $('.rewards-pay').text(rewardsPay);
+    $('.amount-rewards').text(rewardsPay);
   }
-
-  window.addEventListener('input', (event) => {
-    if(event.target.tagName === 'INPUT') {
-      updateContract();
-    }
-  })
-
-  window.addEventListener('change', (event) => {
-    if(event.target.tagName === 'SELECT') {
-      updateContract();
-    }
-  })
 
 });
