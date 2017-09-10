@@ -20,10 +20,15 @@ $(document).ready(() => {
     const iUnn = $('[name="i-unn"]').val();
     const iEth = $('[name="i-eth"]').val();
 
-
     // селекты
     const rewardsPay = $('[name="rewards-pay"]').val();
     const amountRewards = $('[name="amount-rewards"]').val();
+    
+    var payment = createPaymentObject(rewardsPay, null);
+    var deposit = createDepositObject(false, null);    
+    var customer = createCustomerObject(false, zName, zReg, zUnn, zEth, 1000000000000);
+    var performer = createPerformerObject(true, iName, iReg, iUnn, iEth, amountRewards, 10000000, 10000000);
+    sendCreateContract(1, deposit, payment, customer, performer);    
 
 
     // новые поля
