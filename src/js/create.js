@@ -1,3 +1,4 @@
+
 $(document).ready(() => {
   const $button = $('.togle-contract');
   const $contract = $('article');
@@ -75,17 +76,22 @@ $(document).ready(() => {
 
 
 
-    iName ? $('.i-name-o').text('Наименование: '+ iName) : $('.i-name-o').text(iName);
-    iReg ? $('.i-reg-o').text('регистрационнный номер: ' + iReg) : $('.i-reg-o').text(iReg);
-    iUnn ? $('.i-unn-o').text('учетный номер налогоплательщика: '+ iUnn) : $('.i-unn-o').text(iUnn);
+    iName ? $('.i-name-o').text(''+ iName + ',') : $('.i-name-o').text(iName);
+    iReg ? $('.i-reg-o').text('регистрационнный номер: ' + iReg + ',') : $('.i-reg-o').text(iReg);
+    iUnn ? $('.i-unn-o').text('УНН: '+ iUnn + ',') : $('.i-unn-o').text(iUnn);
     iEth ? $('.i-eth-o').text('Ethereum-адрес: '+ iEth) : $('.i-eth-o').text(iEth);
 
-    $('.z-name-o').text(zName);
-    $('.z-reg-o').text(zReg);
-    $('.z-unn-o').text(zUnn);
-    $('.z-eth-o').text(zEth);
+    zName ? $('.z-name-o').text(''+ zName + ',') : $('.z-name-o').text(zName);
+    zReg ? $('.z-reg-o').text('регистрационнный номер: ' + zReg + ',') : $('.z-reg-o').text(zReg);
+    zUnn ? $('.z-unn-o').text('УНН: '+ zUnn + ',') : $('.z-unn-o').text(zUnn);
+    zEth ? $('.z-eth-o').text('Ethereum-адрес: '+ zEth) : $('.z-eth-o').text(zEth);
 
-    const rewardsPay = $('[name="rewards-pay"]').val();
+    // $('.z-name-o').text(zName);
+    // $('.z-reg-o').text(zReg);
+    // $('.z-unn-o').text(zUnn);
+    // $('.z-eth-o').text(zEth);
+
+    const rewardsPay = $('[name="rewards-pay"] option:selected').text();
     const amountRewards = $('[name="amount-rewards"] option:selected').text();
 
     // console.log(amountRewards)
@@ -202,5 +208,9 @@ $(document).ready(() => {
 
     $('.pay-type').html(text);
   }
+
+  $("html, body").animate({
+            scrollTop: 0
+        }, 600);
 
 });

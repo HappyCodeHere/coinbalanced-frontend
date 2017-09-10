@@ -1,3 +1,4 @@
+
 function createDepositObject(needDepositValue, depositSumValue){
     var deposit = {
         needDeposit: needDepositValue,
@@ -14,8 +15,8 @@ function createPaymentObject(paymentTypeValue, paymentClauseValue){
     return payment;
 }
 
-function createCustomerObject(customerIsCompanyValue, 
-    customerNameValue, customerRegisterNumberValue, customerTaxNumberValue, 
+function createCustomerObject(customerIsCompanyValue,
+    customerNameValue, customerRegisterNumberValue, customerTaxNumberValue,
     customerAddressValue, customerShareValue) {
         var customer = {
             customerIsCompany: customerIsCompanyValue,
@@ -29,7 +30,7 @@ function createCustomerObject(customerIsCompanyValue,
     }
 
 function createPerformerObject(performerIsCompanyValue, performerNameValue,
-    performerRegisterNumberValue, performerTaxNumberValue, performerAddressValue, 
+    performerRegisterNumberValue, performerTaxNumberValue, performerAddressValue,
     performerPayTypeValue, performerShareValue, performerFixedSumValue){
     var performer = {
         performerIsCompany: performerIsCompanyValue,
@@ -44,7 +45,7 @@ function createPerformerObject(performerIsCompanyValue, performerNameValue,
     return performer;
 }
 
-function sendCreateContract(caseTemplateIdValue, 
+function sendCreateContract(caseTemplateIdValue,
     depositValue, paymentValue,
     customerValue, performerValue) {
     var xhr = new XMLHttpRequest();

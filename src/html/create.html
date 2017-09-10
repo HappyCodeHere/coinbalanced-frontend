@@ -51,7 +51,7 @@
               </div>
 
               <div class="form-group">
-                <label for="">Учетный номер налогоплательщика:</label>
+                <label for="">УНН:</label>
                 <input type="text" class="form-control" name="z-unn">
               </div>
 
@@ -75,7 +75,7 @@
               </div>
 
               <div class="form-group">
-                <label for="">Учетный номер налогоплательщика:</label>
+                <label for="">УНН:</label>
                 <input type="text" class="form-control" name="i-unn">
               </div>
 
@@ -90,25 +90,56 @@
           <hr>
 
           <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Вознаграждение выплачивается:</label>
-                <select name="rewards-pay" class="form-control">
-                  <option value="onSum">при каждом случае Оплаты</option>
-                  <option value="everyTransaction">при определенном (число) количестве Оплат</option>
-                </select>
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Размер вознаграждения составляет:</label>
+                    <select name="amount-rewards" class="form-control">
+                      <option value="percent">как % от значения “Оплата на сумму”</option>
+                      <option value="fixed">фиксированное число ETH</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="pay-type"></div>
+                </div>
+
+                <div class=" col-md-8">
+                  <div class="form-group">
+                    <label>Вознаграждение выплачивается:</label>
+                    <select name="rewards-pay" class="form-control">
+                      <option value="onSum">при достижении определенной суммы</option>
+                      <option value="everyTransaction">при каждой оплате</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12">
+
+                  <hr>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 0px;">
+                  <div class="form-group">
+                    <label>Договор вступает в силу:</label>
+                    <select name="contract-action" class="form-control">
+                      <option>незамедлительно</option>
+                      <!-- <option>c даты и времени</option> -->
+                      <option>после внесения Депозита</option>
+                    </select>
+                  </div>
+                  <div class="if-deposit" style="margin-top: 0px;"></div>
+                </div>
               </div>
+
+
+
+
+
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Размер вознаграждения составляет:</label>
-                <select name="amount-rewards" class="form-control">
-                  <option value="percent">как % от значения “Оплата на сумму”</option>
-                  <option value="fixed">фиксированное число ETH</option>
-                </select>
-              </div>
-            </div>
-            <div class="pay-type"></div>
           </div>
 
           <section>
@@ -116,15 +147,7 @@
             [в случае совершения (количество Оплат)]</option>
             <option value=""></option> -->
 
-            <div class="form-group">
-              <label>Договор вступает в силу:</label>
-              <select name="contract-action" class="form-control">
-                <option>незамедлительно</option>
-                <!-- <option>c даты и времени</option> -->
-                <option>после внесения Депозита</option>
-              </select>
-            </div>
-            <div class="if-deposit"></div>
+
           </section>
 
           <!-- <button class="togle-contract btn-reset">Hide contract</button> -->
@@ -150,7 +173,7 @@
         © 2017 Coin balanced. All rights reserved.
       </span>
     </footer>
-    <script src="js/apiService.js"></script>
+    <!-- <script src="js/apiService.js"></script> -->
     <script src="js/create.js"></script>
 </body>
 </html>
