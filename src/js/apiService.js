@@ -64,22 +64,20 @@ function sendCreateContract(caseTemplateIdValue,
         customer: customerValue,
         performer: performerValue
     }
-
-    var value = JSON.stringify(contract);
-    console.log(value);
-    sendRequest(value, baseUrl);
+    console.log(contract);
+    sendRequest(contract, baseUrl);
 }
 
 function sendRequest(value, endpoint) {
     console.log("in sendRequest");
     $.ajax({
-        type: "POST",
-        //the url where you want to sent the userName and password to
         url: endpoint,
-        dataType: 'json',
-        async: false,
-        //json object to sent to the authentication url
-        data: value,
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(value),
+        contentType: "application/json",
+        async: true,
+        crossDomain: true,
         success: function (response) {
             console.log(response);
             console.log("contract sended");
