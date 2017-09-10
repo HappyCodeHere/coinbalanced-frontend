@@ -27,12 +27,13 @@ $(document).ready(() => {
 
 
     // новые поля
-    const deposit = $('.if-deposit input').val();
-    const persent = $('.reward-persent input').val();
-    const rDeposit = $('.reward-deposit input').val();
+    //
+    const depositSum = $('.if-deposit input').val();
+    const performerPersent = $('.reward-persent input').val();
+    const performerFixed = $('.reward-deposit input').val();
 
 
-
+    
     // console.log('deposit', deposit);
     // console.log('persent', persent);
     // console.log('rDeposit', rDeposit);
