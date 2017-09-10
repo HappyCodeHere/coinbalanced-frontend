@@ -23,12 +23,12 @@ $(document).ready(() => {
     // селекты
     const rewardsPay = $('[name="rewards-pay"]').val();
     const amountRewards = $('[name="amount-rewards"]').val();
-    
+
     var payment = createPaymentObject(rewardsPay, null);
-    var deposit = createDepositObject(false, null);    
+    var deposit = createDepositObject(false, null);
     var customer = createCustomerObject(false, zName, zReg, zUnn, zEth, 1000000000000);
     var performer = createPerformerObject(true, iName, iReg, iUnn, iEth, amountRewards, 10000000, 10000000);
-    sendCreateContract(1, deposit, payment, customer, performer);    
+    sendCreateContract(1, deposit, payment, customer, performer);
 
 
     // новые поля
@@ -38,7 +38,7 @@ $(document).ready(() => {
     const performerFixed = $('.reward-deposit input').val();
 
 
-    
+
     // console.log('deposit', deposit);
     // console.log('persent', persent);
     // console.log('rDeposit', rDeposit);
@@ -96,6 +96,8 @@ $(document).ready(() => {
 
     const rewardsPay = $('[name="rewards-pay"]').val();
     const amountRewards = $('[name="amount-rewards"]').val();
+
+    console.log('--------');
 
     if (amountRewards === 'как % от значения “Оплата на сумму”')  {
       if (prevState !== amountRewards) {
