@@ -1,17 +1,18 @@
 $(document).ready(() => {
 
-    const html = `
+  $.getJSON("http://localhost:8081/v1/contracts", function (data) {
+    var items = [];
+    $.each(data, function (key, val) {
+      var html = `
       <tr>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td>lorem</td>
-        <td><a href="/contract.html">publish</a></td>
+        <td>` + val.contractAddress + `</td>
+        <td>` + val.id + `</td>
+        <td>` + val.performer.performerName + `</td>
+        <td>Отправлен</td>
+        <td><a href="/contract.html">Редактировать</a></td>
       </tr>
-    `;
-
-    for (var i = 0; i < 6; i++) {
-        $('tbody').append(html);
-    }
+      `;
+      $('tbody').append(html);
+    });
+  });
 });
